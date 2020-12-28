@@ -3,7 +3,7 @@ from crudapp.models import Student
 from crudapp import forms
 # Create your views here.
 def read_data(request):
-    student_details = Student.objects.all()
+    student_details = Student.objects.order_by('sno')
     my_dict = {'student_details':student_details}
     return render(request,'html/read.html',my_dict)
 
